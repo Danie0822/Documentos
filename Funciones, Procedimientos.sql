@@ -1,4 +1,18 @@
---- funciones 
+-- DROP de funciones si existen
+DROP FUNCTION IF EXISTS calcular_promedio_valoraciones;
+DROP FUNCTION IF EXISTS generar_numero_pedido;
+
+-- DROP de procedimientos si existen
+DROP PROCEDURE IF EXISTS agregar_detalle_pedido;
+DROP PROCEDURE IF EXISTS agregar_pedido;
+
+-- DROP de vistas si existen
+DROP VIEW IF EXISTS vista_producto_mas_vendido;
+DROP VIEW IF EXISTS vista_top_5_clientes;
+DROP VIEW IF EXISTS vista_top_5_productos;
+
+
+-- funciones 
 
 -- calcular promedio 
 DELIMITER //
@@ -57,6 +71,7 @@ END//
 
 DELIMITER ;
 
+
 --- Procedimiento Agregar Pedido
 
 DELIMITER //
@@ -78,7 +93,7 @@ DELIMITER ;
 
 -- Vistas
 
---- Vista Producto top 
+-- Vista Producto top 
 CREATE VIEW vista_producto_mas_vendido AS
 SELECT id_inventario, SUM(cantidad_producto) AS total_vendido
 FROM tb_detalle_pedido
@@ -95,7 +110,7 @@ ORDER BY total_pedidos DESC
 LIMIT 5;
 
 
---- Vistas Productos tops 
+-- Vistas Productos tops 
 CREATE VIEW vista_top_5_productos AS
 SELECT id_inventario, SUM(cantidad_producto) AS total_vendido
 FROM tb_detalle_pedido
