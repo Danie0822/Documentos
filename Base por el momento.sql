@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS tb_olores (
 -- Tabla Descuentos
 CREATE TABLE IF NOT EXISTS tb_descuentos (
     id_descuento INT AUTO_INCREMENT PRIMARY KEY,
-    cantidad_descuento DECIMAL(10, 2) NOT NULL DEFAULT '0.15',
+    cantidad_descuento DECIMAL(10, 2) NOT NULL,
     descripcion_descuento TEXT,
     fecha_inicio_descuento DATE,
     estado_descuento BOOLEAN,
