@@ -138,3 +138,4 @@ CREATE TABLE IF NOT EXISTS tb_detalle_pedido (
     CONSTRAINT FK_detalle_pedido_pedido FOREIGN KEY (id_pedido) REFERENCES tb_pedidos(id_pedido),
     CONSTRAINT FK_detalle_pedido_inventario FOREIGN KEY (id_inventario) REFERENCES tb_inventarios(id_inventario)
 ) ENGINE=InnoDB;
+
